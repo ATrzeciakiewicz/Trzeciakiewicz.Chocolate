@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trzeciakiewicz.Chocolate.BLC", "Trzeciakiewicz.Chocolate.BLC\Trzeciakiewicz.Chocolate.BLC.csproj", "{E4EC3104-004B-4F17-91BF-665D0CA603FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trzeciakiewicz.Chocolate.Core", "Trzeciakiewicz.Chocolate.Core\Trzeciakiewicz.Chocolate.Core.csproj", "{852FB051-3A4A-49CD-840C-E793B59468CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trzeciakiewicz.Chocolate.DAOMock1", "Trzeciakiewicz.Chocolate.DAOMock1\Trzeciakiewicz.Chocolate.DAOMock1.csproj", "{F12B8F43-CB67-47AF-9606-97AECFE7D566}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trzeciakiewicz.Chocolate.DAOMock2", "Trzeciakiewicz.Chocolate.DAOMock2\Trzeciakiewicz.Chocolate.DAOMock2.csproj", "{4D841C9F-2097-48D2-9E60-9FE262FD80C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trzeciakiewicz.Chocolate.Interfaces", "Trzeciakiewicz.Chocolate.Interfaces\Trzeciakiewicz.Chocolate.Interfaces.csproj", "{D2D38D8F-1AB9-4808-8486-1CBE38E6AAE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trzeciakiewicz.Chocolate.UI", "Trzeciakiewicz.Chocolate.UI\Trzeciakiewicz.Chocolate.UI.csproj", "{2AE71A5C-9948-4D48-B1C4-62628AB75D3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4EC3104-004B-4F17-91BF-665D0CA603FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4EC3104-004B-4F17-91BF-665D0CA603FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4EC3104-004B-4F17-91BF-665D0CA603FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4EC3104-004B-4F17-91BF-665D0CA603FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{852FB051-3A4A-49CD-840C-E793B59468CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{852FB051-3A4A-49CD-840C-E793B59468CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{852FB051-3A4A-49CD-840C-E793B59468CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{852FB051-3A4A-49CD-840C-E793B59468CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F12B8F43-CB67-47AF-9606-97AECFE7D566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F12B8F43-CB67-47AF-9606-97AECFE7D566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F12B8F43-CB67-47AF-9606-97AECFE7D566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F12B8F43-CB67-47AF-9606-97AECFE7D566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D841C9F-2097-48D2-9E60-9FE262FD80C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D841C9F-2097-48D2-9E60-9FE262FD80C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D841C9F-2097-48D2-9E60-9FE262FD80C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D841C9F-2097-48D2-9E60-9FE262FD80C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2D38D8F-1AB9-4808-8486-1CBE38E6AAE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2D38D8F-1AB9-4808-8486-1CBE38E6AAE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2D38D8F-1AB9-4808-8486-1CBE38E6AAE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2D38D8F-1AB9-4808-8486-1CBE38E6AAE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AE71A5C-9948-4D48-B1C4-62628AB75D3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AE71A5C-9948-4D48-B1C4-62628AB75D3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AE71A5C-9948-4D48-B1C4-62628AB75D3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AE71A5C-9948-4D48-B1C4-62628AB75D3B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85039B7D-DEE5-49E1-B8BF-46670088C069}
+	EndGlobalSection
+EndGlobal
