@@ -14,6 +14,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -93,6 +94,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Trzeciakiewicz.Chocolate.BLC\Trzeciakiewicz.Chocolate.BLC.csproj">
+      <Project>{E4EC3104-004B-4F17-91BF-665D0CA603FF}</Project>
+      <Name>Trzeciakiewicz.Chocolate.BLC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Trzeciakiewicz.Chocolate.Interfaces\Trzeciakiewicz.Chocolate.Interfaces.csproj">
+      <Project>{D2D38D8F-1AB9-4808-8486-1CBE38E6AAE4}</Project>
+      <Name>Trzeciakiewicz.Chocolate.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
