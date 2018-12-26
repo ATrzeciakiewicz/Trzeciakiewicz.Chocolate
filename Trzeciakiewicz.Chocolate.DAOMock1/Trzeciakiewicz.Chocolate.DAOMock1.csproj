@@ -58,4 +58,12 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /y $(TargetPath) $(SolutionDir)Trzeciakiewicz.Chocolate.UI\bin\Release
+xcopy /y $(TargetPath) $(SolutionDir)Trzeciakiewicz.Chocolate.UI\bin\Debug</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
 </Project>

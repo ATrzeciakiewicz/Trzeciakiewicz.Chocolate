@@ -10,7 +10,7 @@ namespace Trzeciakiewicz.Chocolate.BLC
 {
     public class BLC
     {
-        private string _settingsProperty;
+        private readonly string _settingsProperty;
         private IDAO _dao = null;
 
         public BLC(string settingsProperty)
@@ -31,8 +31,8 @@ namespace Trzeciakiewicz.Chocolate.BLC
 
         private void CreateMockInstance()
         {
-            Assembly assembly = Assembly.LoadFrom($"AgnieszkaTrzeciakiewicz.Chocolate.{_settingsProperty}.dll");
-            Type type = assembly.GetType($"AgnieszkaTrzeciakiewicz.Chocolate.{_settingsProperty}.DB");
+            Assembly assembly = Assembly.LoadFrom($"Trzeciakiewicz.Chocolate.{_settingsProperty}.dll");
+            Type type = assembly.GetType($"Trzeciakiewicz.Chocolate.{_settingsProperty}.DB");
 
             _dao = (IDAO)Activator.CreateInstance(type);
         }
