@@ -10,11 +10,9 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Trzeciakiewicz.Chocolate.BLC;
 
-namespace Trzeciakiewicz.Chocolate.UI
+namespace Trzeciakiewicz.Chocolate.UI.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,14 +22,6 @@ namespace Trzeciakiewicz.Chocolate.UI
         public MainWindow()
         {
             InitializeComponent();
-
-            string _settingsProperty = UI.Properties.Settings.Default.DAO;
-
-            BLC.BLC blc = new BLC.BLC(_settingsProperty);
-
-            var producers = blc.GetProducers();
-
-            var product = blc.GetChocolates();
         }
     }
 }

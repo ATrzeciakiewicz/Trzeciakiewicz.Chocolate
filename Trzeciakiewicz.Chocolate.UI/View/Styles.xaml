@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Trzeciakiewicz.Chocolate.UI.View">
+
+    <Style x:Key="TabControlStyle" TargetType="TabItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Grid Name="Panel">
+                        <Border 
+                                    Name="Border"
+                                    Margin="0,0,-1,0"                                    
+                                    BorderThickness="1,1,1,1" >
+                            <ContentPresenter x:Name="ContentSite"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"
+                                      ContentSource="Header"
+                                      Margin="10,2,10,2"
+                                      RecognizesAccessKey="True"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Panel" Property="Background" Value="BlueViolet" />
+                            <Setter Property="Foreground" Value="SandyBrown" />
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter TargetName="Panel" Property="Background" Value="#C167DF" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+
+
+</ResourceDictionary>
