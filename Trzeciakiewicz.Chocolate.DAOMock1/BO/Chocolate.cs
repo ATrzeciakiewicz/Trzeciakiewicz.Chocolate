@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Trzeciakiewicz.Chocolate.Core.Enums;
+﻿using Trzeciakiewicz.Chocolate.Core.Enums;
 using Trzeciakiewicz.Chocolate.Interfaces;
 
 namespace Trzeciakiewicz.Chocolate.DAOMock1.BO
@@ -17,10 +12,5 @@ namespace Trzeciakiewicz.Chocolate.DAOMock1.BO
         public EChocolateAdditions Additions { get; set; }
         public int ProducerID { get; set; }
         public IProducer Producer { get; set; }
-
-        public override string ToString()
-        {
-            return $"{Producer.Name} {Name} {Type} {Stuffed} {Additions} ";
-        }
     }
 }

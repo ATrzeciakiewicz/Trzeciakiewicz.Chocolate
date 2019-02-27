@@ -14,9 +14,10 @@ namespace Trzeciakiewicz.Chocolate.UI.ViewModel
     {
         private IChocolate _product;
 
-        public ProductViewModel(IChocolate product)
+        public ProductViewModel(IChocolate product, IEnumerable<IProducer> producers)
         {
             _product = product;
+            _producers = new ObservableCollection<IProducer>(producers);
         }
 
         public int ID

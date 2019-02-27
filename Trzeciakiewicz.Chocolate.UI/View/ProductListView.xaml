@@ -64,7 +64,7 @@
                         <Label Foreground="Wheat">Additions</Label>
                         <ComboBox Width="315" HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource additionsEnum}}" SelectedItem="{Binding Additions, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <Label  Foreground="Wheat">Producer Name</Label>
-                        <ComboBox Width="315" HorizontalAlignment="Left" ItemsSource="{Binding Path=Producers}" DisplayMemberPath="Name" SelectedItem="{Binding Producer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <ComboBox Width="315" HorizontalAlignment="Left" ItemsSource="{Binding Path=Producers}" SelectedItem="{Binding Producer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                 </Grid>
                 <StackPanel Orientation="Horizontal" Margin="50,250,10,0">

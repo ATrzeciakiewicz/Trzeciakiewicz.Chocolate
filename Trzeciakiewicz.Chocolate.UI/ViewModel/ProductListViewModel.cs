@@ -4,7 +4,6 @@ using Trzeciakiewicz.Chocolate.Interfaces;
 using Prism.Mvvm;
 using Prism.Commands;
 using System.Linq;
-using Trzeciakiewicz.Chocolate.Core.Enums;
 
 namespace Trzeciakiewicz.Chocolate.UI.ViewModel
 {
@@ -46,7 +45,7 @@ namespace Trzeciakiewicz.Chocolate.UI.ViewModel
             Products = new ObservableCollection<IChocolate>();
             Products.AddRange(Product);
 
-            EditProduct = new ProductViewModel(blc.EmptyChocolate());
+            EditProduct = new ProductViewModel(blc.EmptyChocolate(), blc.GetProducers());
         }
 
         private void InitializeCommands()
@@ -94,7 +93,7 @@ namespace Trzeciakiewicz.Chocolate.UI.ViewModel
         {
             _editableProduct.ID = Products.Count() + 1;
             _editableProduct.Name = EditProduct.Name;
-            _editableProduct.ProducerID = EditProduct.ProducerID ;
+            _editableProduct.ProducerID = EditProduct.Producer.ID ;
             _editableProduct.Additions = EditProduct.Additions;
             _editableProduct.Stuffed = EditProduct.Stuffed;
             _editableProduct.Type = EditProduct.Type;
