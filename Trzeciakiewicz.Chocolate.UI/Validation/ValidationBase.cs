@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Runtime.CompilerServices;
 
 namespace Trzeciakiewicz.Chocolate.UI.Validation
 {
@@ -62,7 +61,6 @@ namespace Trzeciakiewicz.Chocolate.UI.Validation
 
             Validator.TryValidateObject(this, validationContext, validationResults, true);
 
-            //usuwamy z kolekcji _errors błędy dla właściwości które już błędów nie mają
             foreach (var kv in _errors.ToList())
             {
                 if (validationResults.All(r => r.MemberNames.All(m => m != kv.Key)))

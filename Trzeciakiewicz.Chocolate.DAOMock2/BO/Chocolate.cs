@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Trzeciakiewicz.Chocolate.Core.Enums;
+﻿using Trzeciakiewicz.Chocolate.Core.Enums;
 using Trzeciakiewicz.Chocolate.Interfaces;
 
 namespace Trzeciakiewicz.Chocolate.DAOMock2.BO
