@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:view="clr-namespace:Trzeciakiewicz.Chocolate.UI.View"
         mc:Ignorable="d"
-        Title="Chocolate" Height="650" Width="900" Background="#D09EDF">
+        Title="Chocolate" Height="750" Width="950" Background="#D09EDF">
 
     <TabControl TabStripPlacement="Left">
         <TabControl.Background>
@@ -22,11 +22,7 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <DockPanel Grid.Column="1">
-                    <view:ProductDetailsView/>
-                </DockPanel>
                 <DockPanel>
                     <view:ProductListView/>
                 </DockPanel>
@@ -39,11 +35,7 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <DockPanel Grid.Column="1">
-                    <view:ProducerDetailsView/>
-                </DockPanel>
                 <DockPanel>
                     <view:ProducerListView/>
                 </DockPanel>

@@ -20,6 +20,16 @@ namespace Trzeciakiewicz.Chocolate.DAOMock1
 
         }
 
+        public IChocolate EmptyChocolate()
+        {
+            return new BO.Chocolate();
+        }
+
+        public IProducer EmptyProducer()
+        {
+            return new BO.Producer();
+        }
+
         public IEnumerable<IChocolate> GetAllChocolates()
         {
             return _chocolates;

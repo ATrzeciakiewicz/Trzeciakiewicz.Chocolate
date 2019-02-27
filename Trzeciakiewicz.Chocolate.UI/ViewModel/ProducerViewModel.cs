@@ -1,31 +1,56 @@
 ﻿using Prism.Mvvm;
-using Prism.Commands;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.ObjectModel;
+using Trzeciakiewicz.Chocolate.Core.Enums;
 using Trzeciakiewicz.Chocolate.Interfaces;
 
 namespace Trzeciakiewicz.Chocolate.UI.ViewModel
 {
-    public class ProducerViewModel : BindableBase
+    public class ProducerViewModel : BindableBase, IProducer
     {
-        public ObservableCollection<IProducer> GetData { get; set; }
+        private IProducer _producer;
 
-        private IEnumerable<IProducer> Producer { get; set; }
-
-        public ProducerViewModel()
+        public ProducerViewModel(IProducer producer)
         {
-
+            _producer = producer;
+            
         }
 
-        public ProducerViewModel(IEnumerable<IProducer> producers)
+        public string Name
         {
-            this.Producer = producers;
-            GetData = new ObservableCollection<IProducer>();
-            GetData.AddRange(Producer);
+            get => _producer.Name;
+            set
+            {
+                _producer.Name = value;
+                RaisePropertyChanged("Name");
+            }
+        }
+
+        private ECountry _country;
+
+        public ECountry OriginsCountry
+        {
+            get
+            {
+                if (_producer.Name != null)
+                {
+                    return _producer.OriginsCountry;
+                }
+                return _country;
+            }
+            set
+            {
+                _producer.OriginsCountry = value;
+                RaisePropertyChanged("OriginsCountry");
+            }
+        }
+
+        public int ID
+        {
+            get => _producer.ID;
+            set
+            {
+                _producer.ID = value;
+                RaisePropertyChanged("ID");
+            }
         }
     }
 }

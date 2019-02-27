@@ -69,7 +69,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\ProducerListViewModel.cs" />
     <Compile Include="ViewModel\ProducerViewModel.cs" />
+    <Compile Include="ViewModel\ProductListViewModel.cs" />
     <Compile Include="ViewModel\ProductViewModel.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -78,14 +80,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\ProducerDetailsView.xaml.cs">
-      <DependentUpon>ProducerDetailsView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\ProducerListView.xaml.cs">
       <DependentUpon>ProducerListView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ProductDetailsView.xaml.cs">
-      <DependentUpon>ProductDetailsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProductListView.xaml.cs">
       <DependentUpon>ProductListView.xaml</DependentUpon>
@@ -94,15 +90,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ProducerDetailsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\ProducerListView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ProductDetailsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -146,6 +134,10 @@
     <ProjectReference Include="..\Trzeciakiewicz.Chocolate.BLC\Trzeciakiewicz.Chocolate.BLC.csproj">
       <Project>{E4EC3104-004B-4F17-91BF-665D0CA603FF}</Project>
       <Name>Trzeciakiewicz.Chocolate.BLC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Trzeciakiewicz.Chocolate.Core\Trzeciakiewicz.Chocolate.Core.csproj">
+      <Project>{852FB051-3A4A-49CD-840C-E793B59468CA}</Project>
+      <Name>Trzeciakiewicz.Chocolate.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Trzeciakiewicz.Chocolate.Interfaces\Trzeciakiewicz.Chocolate.Interfaces.csproj">
       <Project>{D2D38D8F-1AB9-4808-8486-1CBE38E6AAE4}</Project>

@@ -10,5 +10,7 @@ namespace Trzeciakiewicz.Chocolate.Interfaces
     {
         IEnumerable<IProducer> GetAllProducers();
         IEnumerable<IChocolate> GetAllChocolates();
+        IProducer EmptyProducer();
+        IChocolate EmptyChocolate();
     }
 }

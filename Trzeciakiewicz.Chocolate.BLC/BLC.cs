@@ -31,6 +31,16 @@ namespace Trzeciakiewicz.Chocolate.BLC
             return _dao.GetAllProducers();
         }
 
+        public IProducer EmptyProducer()
+        {
+            return _dao.EmptyProducer();
+        }
+
+        public IChocolate EmptyChocolate()
+        {
+            return _dao.EmptyChocolate();
+        }
+
         private void CreateMockInstance()
         {
             string path = new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent.FullName;

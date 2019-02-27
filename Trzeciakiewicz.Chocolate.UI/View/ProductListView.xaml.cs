@@ -12,11 +12,7 @@ namespace Trzeciakiewicz.Chocolate.UI.View
         {
             InitializeComponent();
 
-            string _settingsProperty = UI.Properties.Settings.Default.DAO;
-
-            BLC.BLC blc = new BLC.BLC(_settingsProperty);
-
-            this.DataContext = new ProductViewModel(blc.GetChocolates());
+            this.DataContext = new ProductListViewModel();
         }
     }
 }

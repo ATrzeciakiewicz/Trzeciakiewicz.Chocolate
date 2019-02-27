@@ -12,16 +12,7 @@ namespace Trzeciakiewicz.Chocolate.UI.View
         {
             InitializeComponent();
 
-            GetProducers();
-        }
-
-        private void GetProducers()
-        {
-            string _settingsProperty = UI.Properties.Settings.Default.DAO;
-
-            BLC.BLC blc = new BLC.BLC(_settingsProperty);
-
-            this.DataContext = new ProducerViewModel(blc.GetProducers());
+            this.DataContext = new ProducerListViewModel();
         }
     }
 }

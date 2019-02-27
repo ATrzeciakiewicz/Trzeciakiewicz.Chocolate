@@ -5,26 +5,58 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Trzeciakiewicz.Chocolate.UI.View"
              xmlns:viewmodel="clr-namespace:Trzeciakiewicz.Chocolate.UI.ViewModel"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:Enums="clr-namespace:Trzeciakiewicz.Chocolate.Core.Enums;assembly=Trzeciakiewicz.Chocolate.Core"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
     <UserControl.DataContext>
-        <viewmodel:ProducerViewModel/>
+        <viewmodel:ProducerListViewModel/>
     </UserControl.DataContext>
 
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="countryEnum" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="Enums:ECountry"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
+
     <Grid>
-        <DataGrid ColumnWidth="*" AutoGenerateColumns="False" ItemsSource="{Binding GetData, Mode=OneWay}"
-          CanUserAddRows="False" CanUserReorderColumns="True" AlternationCount="2" Margin="1,1,1,1" VerticalAlignment="Top">
-            <DataGrid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF6F6D9C" Offset="1"/>
-                </LinearGradientBrush>
-            </DataGrid.Background>
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Name}" Header="Producer Name" Width="170"/>
-                <DataGridTextColumn Binding="{Binding OriginsCountry}" Header="Origins Country" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Column="0">
+            <DataGrid Name="ProducerGrid" AutoGenerateColumns="False" Margin="1,1,1,1" VerticalAlignment="Top" IsReadOnly="True"
+                  ItemsSource="{Binding Path=Producers}" SelectionMode="Extended"
+                  SelectedItem="{Binding Path=SelectedProducer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Name}" Header="Producer Name" Width="170"/>
+                    <DataGridTextColumn Binding="{Binding OriginsCountry}" Header="Origins Country" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+        <DockPanel Grid.Column="1">
+            <Grid Margin="25,20,1,1">
+                <Grid Grid.Row="0" DataContext="{Binding EditProducer}">
+                    <StackPanel  Margin="50,5,10,0">
+                        <Label Foreground="Wheat">Name</Label>
+                        <TextBox Width="315" HorizontalAlignment="Left"  Text="{Binding Name}"/>
+                        <Label Foreground="Wheat">Origins Country</Label>
+                        <ComboBox Width="315" HorizontalAlignment="Left"  ItemsSource="{Binding Source={StaticResource countryEnum}}" SelectedItem="{Binding OriginsCountry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                </Grid>
+                <StackPanel Orientation="Horizontal" Margin="50,250,10,0">
+                    <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="0,40,0,0" VerticalAlignment="Top" Width="90" 
+                        Background="#FF550101" Foreground="Wheat" BorderBrush="BlueViolet" Command="{Binding AddCommand}"/>
+                    <Button  x:Name="btnEdit" Content="Edit" HorizontalAlignment="Center" Margin="20,40,0,0" VerticalAlignment="Top" Width="90" 
+                        Background="#FF550101" Foreground="Wheat" BorderBrush="BlueViolet" Command="{Binding EditCommand}"/>
+                    <Button  x:Name="btnDelete" Content="Delete" HorizontalAlignment="Right" Margin="20,40,0,0" VerticalAlignment="Top" Width="90" 
+                        Background="#FF550101" Foreground="Wheat" BorderBrush="BlueViolet" Command="{Binding DeleteCommand}"/>
+                </StackPanel>
+
+            </Grid>
+        </DockPanel>
     </Grid>
 </UserControl>
