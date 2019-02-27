@@ -1,16 +1,13 @@
-﻿using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Trzeciakiewicz.Chocolate.Core.Enums;
 using Trzeciakiewicz.Chocolate.Interfaces;
+using System.ComponentModel.DataAnnotations;
+using Trzeciakiewicz.Chocolate.UI.Validation;
 
 namespace Trzeciakiewicz.Chocolate.UI.ViewModel
 {
-    public class ProductViewModel : BindableBase, IChocolate
+    public class ProductViewModel : ValidationBase
     {
         private IChocolate _product;
 
@@ -30,12 +27,14 @@ namespace Trzeciakiewicz.Chocolate.UI.ViewModel
             }
         }
 
+        [Required]
         public string Name
         {
             get => _product.Name;
             set
             {
                 _product.Name = value;
+                Validate();
                 RaisePropertyChanged("Name");
             }
         }
@@ -51,7 +50,7 @@ namespace Trzeciakiewicz.Chocolate.UI.ViewModel
         }
 
         private EChocolateType _type;
-
+        [Required]
         public EChocolateType Type
         {
             get
@@ -65,12 +64,13 @@ namespace Trzeciakiewicz.Chocolate.UI.ViewModel
             set
             {
                 _product.Type = value;
+                Validate();
                 RaisePropertyChanged("Type");
             }
         }
 
         private EChocolateStuffed _stuffed;
-
+        [Required]
         public EChocolateStuffed Stuffed
         {
             get
@@ -84,12 +84,13 @@ namespace Trzeciakiewicz.Chocolate.UI.ViewModel
             set
             {
                 _product.Stuffed = value;
+                Validate();
                 RaisePropertyChanged("Stuffed");
             }
         }
 
         private EChocolateAdditions _additions;
-
+        [Required]
         public EChocolateAdditions Additions
         {
             get
@@ -103,13 +104,14 @@ namespace Trzeciakiewicz.Chocolate.UI.ViewModel
             set
             {
                 _product.Additions = value;
+                Validate();
                 RaisePropertyChanged("Additions");
             }
         }
 
 
         private IProducer _producer;
-
+        [Required]
         public IProducer Producer
         {
             get
@@ -123,6 +125,8 @@ namespace Trzeciakiewicz.Chocolate.UI.ViewModel
             set
             {
                 _product.Producer = value;
+                _producer = value;
+                Validate();
                 RaisePropertyChanged("Producer");
             }
         }

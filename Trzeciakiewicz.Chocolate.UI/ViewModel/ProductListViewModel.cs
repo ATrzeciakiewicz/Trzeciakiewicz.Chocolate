@@ -93,13 +93,19 @@ namespace Trzeciakiewicz.Chocolate.UI.ViewModel
         {
             _editableProduct.ID = Products.Count() + 1;
             _editableProduct.Name = EditProduct.Name;
-            _editableProduct.ProducerID = EditProduct.Producer.ID ;
             _editableProduct.Additions = EditProduct.Additions;
             _editableProduct.Stuffed = EditProduct.Stuffed;
             _editableProduct.Type = EditProduct.Type;
-            _editableProduct.Producer = EditProduct.Producer;
+            
+            if(EditProduct.Producer != null)
+            {
+                _editableProduct.ProducerID = EditProduct.Producer.ID;
+                _editableProduct.Producer = EditProduct.Producer;
+            }
+            EditProduct.Validate();
 
-            _products.Add(_editableProduct);
+            if (!EditProduct.HasErrors)
+                _products.Add(_editableProduct);
         }
 
         private bool CanAdd()

@@ -42,9 +42,9 @@
                 <Grid Grid.Row="0" DataContext="{Binding EditProducer}">
                     <StackPanel  Margin="50,5,10,0">
                         <Label Foreground="Wheat">Name</Label>
-                        <TextBox Width="315" HorizontalAlignment="Left"  Text="{Binding Name}"/>
+                        <TextBox Width="315" HorizontalAlignment="Left" Style="{StaticResource TextBoxWithErrors}" Text="{Binding Name}"/>
                         <Label Foreground="Wheat">Origins Country</Label>
-                        <ComboBox Width="315" HorizontalAlignment="Left"  ItemsSource="{Binding Source={StaticResource countryEnum}}" SelectedItem="{Binding OriginsCountry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <ComboBox Width="315" HorizontalAlignment="Left" Style="{StaticResource TextBoxWithErrors}" ItemsSource="{Binding Source={StaticResource countryEnum}}" SelectedItem="{Binding OriginsCountry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                 </Grid>
                 <StackPanel Orientation="Horizontal" Margin="50,250,10,0">

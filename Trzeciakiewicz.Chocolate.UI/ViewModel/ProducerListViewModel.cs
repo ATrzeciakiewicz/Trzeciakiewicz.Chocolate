@@ -90,7 +90,10 @@ namespace Trzeciakiewicz.Chocolate.UI.ViewModel
             _editableProducer.Name = EditProducer.Name;
             _editableProducer.OriginsCountry = EditProducer.OriginsCountry;
 
-            _producers.Add(_editableProducer);
+            EditProducer.Validate();
+
+            if(!EditProducer.HasErrors)
+                _producers.Add(_editableProducer);
         }
 
         private bool CanAdd()

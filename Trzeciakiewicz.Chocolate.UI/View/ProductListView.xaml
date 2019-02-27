@@ -55,16 +55,15 @@
                 <Grid Grid.Row="0" DataContext="{Binding EditProduct}">
                     <StackPanel  Margin="50,5,10,0">
                         <Label Foreground="Wheat">Name</Label>
-                        <TextBox Width="315" HorizontalAlignment="Left" Text="{Binding Name}"/>
-                        
+                        <TextBox Width="315" HorizontalAlignment="Left" Style="{StaticResource TextBoxWithErrors}" Text="{Binding Name}"/>
                         <Label Foreground="Wheat">Type</Label>
-                        <ComboBox Width="315" HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource typeEnum}}" SelectedItem="{Binding Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <ComboBox Width="315" HorizontalAlignment="Left" Style="{StaticResource TextBoxWithErrors}" ItemsSource="{Binding Source={StaticResource typeEnum}}" SelectedItem="{Binding Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <Label Foreground="Wheat">Stuffed</Label>
-                        <ComboBox Width="315" HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource stuffedEnum}}" SelectedItem="{Binding Stuffed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <ComboBox Width="315" HorizontalAlignment="Left" Style="{StaticResource TextBoxWithErrors}" ItemsSource="{Binding Source={StaticResource stuffedEnum}}" SelectedItem="{Binding Stuffed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <Label Foreground="Wheat">Additions</Label>
-                        <ComboBox Width="315" HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource additionsEnum}}" SelectedItem="{Binding Additions, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label  Foreground="Wheat">Producer Name</Label>
-                        <ComboBox Width="315" HorizontalAlignment="Left" ItemsSource="{Binding Path=Producers}" SelectedItem="{Binding Producer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <ComboBox Width="315" HorizontalAlignment="Left" Style="{StaticResource TextBoxWithErrors}" ItemsSource="{Binding Source={StaticResource additionsEnum}}" SelectedItem="{Binding Additions, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label  Foreground="Wheat">Producer</Label>
+                        <ComboBox Width="315" HorizontalAlignment="Left" Style="{StaticResource TextBoxWithErrors}" ItemsSource="{Binding Path=Producers}" SelectedItem="{Binding Producer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                 </Grid>
                 <StackPanel Orientation="Horizontal" Margin="50,250,10,0">

@@ -34,4 +34,26 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="TextBoxWithErrors">
+        <Setter Property="Validation.ErrorTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <StackPanel>
+                        <ListBox DockPanel.Dock="Bottom" 
+                                     ItemsSource="{Binding ElementName=ErrorComponent,Path=AdornedElement.(Validation.Errors)}" 
+                                     DisplayMemberPath="ErrorContent"/>
+                        <Border BorderBrush="DarkRed" BorderThickness="2" >
+                            <AdornedElementPlaceholder Name="ErrorComponent" />
+                        </Border>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="Control.Margin" Value="2 2 2 2" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>
